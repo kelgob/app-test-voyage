@@ -1,0 +1,74 @@
+{# @var voyage \App\Entity\Voyage #}
+{# @var etape \App\Entity\Etape #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Voyage{% endblock %}
+
+{% block body %}
+    <h1>Voyage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ voyage.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ voyage.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% for etape in voyage.etapes %}
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>Étape {{ etape.stepOrder }}</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>Type</th>
+                <td>{{ ('etape.type.'~etape.type)|trans }}</td>
+            </tr>
+            <tr>
+                <th>Départ</th>
+                <td>{{ etape.departure.name }}</td>
+            </tr>
+            <tr>
+                <th>Arrivée</th>
+                <td>{{ etape.arrival.name }}</td>
+            </tr>
+            <tr>
+                <th>Numéro</th>
+                <td>{{ etape.number }}</td>
+            </tr>
+            {% if etape.gate is not empty %}
+                <tr>
+                    <th>Gate</th>
+                    <td>{{ etape.gate }}</td>
+                </tr>
+            {% endif %}
+            {% if etape.seat is not empty %}
+                <tr>
+                    <th>Seat</th>
+                    <td>{{ etape.seat }}</td>
+                </tr>
+            {% endif %}
+            {% if etape.baggageDrop is not empty %}
+                <tr>
+                    <th>Baggage Drop</th>
+                    <td>{{ etape.baggageDrop }}</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    {% endfor %}
+
+    <a href="{{ path('app_voyage_index') }}">back to list</a>
+
+    <a href="{{ path('app_voyage_edit', {'id': voyage.id}) }}">edit</a>
+
+    {{ include('voyage/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,48 @@
+[
+  {
+    "type": "bus",
+    "number": "B1",
+    "departure": "Grasse",
+    "arrival": "Cannes",
+    "seat": null
+  },
+  {
+    "type": "train",
+    "number": "TER-A",
+    "departure": "Cannes",
+    "arrival": "Nice Riquier",
+    "seat": null
+  },
+  {
+    "type": "bus",
+    "number": "B2",
+    "departure": "Nice Riquier",
+    "arrival": "Nice",
+    "seat": null
+  },
+  {
+    "type": "plane",
+    "number": "P455",
+    "departure": "Nice",
+    "arrival": "Paris",
+    "seat": "3A",
+    "gate": "45B",
+    "baggage_drop": null
+  },
+  {
+    "type": "plane",
+    "number": "P42",
+    "departure": "Paris",
+    "arrival": "Londre",
+    "seat": "96B",
+    "gate": "12",
+    "baggage_drop": "123"
+  },
+  {
+    "type": "train",
+    "number": "T9 3/4",
+    "departure": "Londre",
+    "arrival": "Hogwarts Castle",
+    "seat": "6"
+  }
+]

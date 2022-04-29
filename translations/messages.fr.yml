@@ -1,0 +1,6 @@
+etape:
+  type:
+    bus: Bus
+    car: Car
+    plane: Avion
+    train: Train

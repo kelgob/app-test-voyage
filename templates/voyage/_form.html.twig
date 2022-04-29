@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.name) }}
+    {% set etape_prototype = form_widget(form.etapes.vars.prototype)|e('html_attr') %}
+    {{ form_row(form.etapes) }}
+    <ul class="etapes"
+        data-index="{{ form.etapes|length > 0 ? form.etapes|last.vars.name + 1 : 0 }}"
+        data-prototype="{{ etape_prototype|raw }}"
+    ></ul>
+    <button type="button" class="btn btn-primary add-form-collection-btn" data-collection-holder-class="etapes">Ajouter une étape</button>
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
