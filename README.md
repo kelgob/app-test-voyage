@@ -7,7 +7,7 @@
 ## Installation
 #### 1. Clonage du dépôt
 ```sh
-git clone https://github.com/kelgob/app-test-voyage.git
+git clone https://github.com/kelgob/app-test-voyage.git .
 ```
 
 #### 2. Construction des containers
